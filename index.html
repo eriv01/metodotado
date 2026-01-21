@@ -367,52 +367,46 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 900;
             font-size: 0.75rem;
-            color: #ffffff;
+            font-weight: 900;
+            color: #fff;
             flex-shrink: 0;
         }
 
         /* Access Section */
         .access-section {
             background: #f8f8f8;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .access-container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
 
         .access-title {
-            font-size: clamp(1.5rem, 4vw, 1.9rem);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-weight: 800;
             color: #1a1a1a;
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
-        .access-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .access-image img {
-            max-width: 100%;
-            max-height: 400px;
-            height: auto;
-            filter: drop-shadow(0 15px 30px rgba(220, 20, 60, 0.2));
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto;
         }
 
         /* Bonus Section */
         .bonus-section {
             background: #ffffff;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .bonus-container {
@@ -420,85 +414,91 @@
             margin: 0 auto;
         }
 
-        .bonus-title {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            font-weight: 800;
+        .bonus-header {
             text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .bonus-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
             color: #1a1a1a;
-            margin-bottom: 8px;
-            line-height: 1.2;
+            margin-bottom: 10px;
         }
 
         .bonus-subtitle {
-            text-align: center;
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            color: #4a4a4a;
-            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: #dc143c;
+            font-weight: 700;
         }
 
         .bonus-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
 
         .bonus-card {
-            background: #ffffff;
+            background: #f8f8f8;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
             border: 2px solid #e0e0e0;
-            border-radius: 15px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
             transition: all 0.3s ease;
         }
 
         .bonus-card:hover {
             border-color: #dc143c;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.15);
+            transform: translateY(-5px);
         }
 
         .bonus-image {
             width: 100%;
-            height: 150px;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #f5f5f5;
+            max-width: 200px;
+            margin: 0 auto 20px;
+        }
+
+        .bonus-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .bonus-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            min-height: 2.6em;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .bonus-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .bonus-name {
-            font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-            font-weight: 700;
-            color: #1a1a1a;
-            line-height: 1.3;
-        }
-
-        .bonus-pricing {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
         .bonus-price-old {
-            font-size: clamp(0.75rem, 1.6vw, 0.85rem);
-            color: #808080;
+            color: #999;
             text-decoration: line-through;
+            font-size: 0.9rem;
         }
 
         .bonus-price-new {
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            font-weight: 700;
-            color: #00b300;
+            color: #dc143c;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #dc143c;
+            padding: 60px 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .stats-title {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 900;
+            line-height: 1.2;
+            text-transform: uppercase;
         }
 
         /* Pricing Section */
@@ -803,6 +803,7 @@
             max-width: 450px;
             width: 100%;
             animation: modalSlideIn 0.4s ease;
+            position: relative;
         }
 
         @keyframes modalSlideIn {
@@ -869,76 +870,54 @@
         .modal-subtitle {
             text-align: center;
             color: #666;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-bottom: 20px;
         }
 
         .modal-bonus {
-            text-align: center;
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 12px;
             font-size: 0.85rem;
-            color: #2a2a2a;
-            line-height: 1.6;
+            color: #4a4a4a;
+            text-align: center;
+            line-height: 1.5;
             margin-bottom: 25px;
-            font-weight: 600;
-            text-transform: uppercase;
+            border: 1px dashed #dc143c;
         }
 
-        .modal-button-accept {
+        .modal-cta {
+            display: block;
             width: 100%;
-            padding: 18px 30px;
-            background: linear-gradient(135deg, #dc143c 0%, #ff4757 100%);
+            padding: 18px;
+            background: #25d366;
             color: #ffffff;
-            border: none;
+            text-align: center;
+            text-decoration: none;
             border-radius: 50px;
+            font-weight: 800;
             font-size: 1.1rem;
-            font-weight: 700;
             text-transform: uppercase;
-            cursor: pointer;
-            margin-bottom: 15px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
         }
 
-        .modal-button-accept:hover {
+        .modal-cta:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(220, 20, 60, 0.5);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
         }
 
-        .modal-button-decline {
-            width: 100%;
-            padding: 15px 30px;
-            background: transparent;
-            color: #2a2a2a;
-            border: 2px solid #2a2a2a;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            text-decoration: none;
+        .modal-no {
             display: block;
             text-align: center;
-        }
-
-        .modal-button-decline:hover {
-            background: #2a2a2a;
-            color: #ffffff;
-        }
-
-        .modal-timer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666666;
-            font-weight: 600;
-        }
-
-        .modal-timer span {
-            color: #dc143c;
-            font-weight: 700;
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.85rem;
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
         }
 
         /* Testimonials Section */
@@ -948,57 +927,48 @@
         }
 
         .testimonials-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .testimonials-title {
-            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-weight: 800;
             text-align: center;
             color: #1a1a1a;
             margin-bottom: 15px;
-            line-height: 1.2;
         }
 
         .testimonials-subtitle {
             text-align: center;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            color: #2a2a2a;
+            font-size: 1.2rem;
+            color: #4a4a4a;
             margin-bottom: 50px;
-            line-height: 1.6;
         }
 
         .highlight-number {
             color: #dc143c;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
         .testimonial-card {
             background: #ffffff;
-            border: 2px solid #e0e0e0;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            border-color: #dc143c;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
         }
 
         .testimonial-header {
+            padding: 15px;
             background: #f8f8f8;
             color: #1a1a1a;
-            padding: 12px 20px;
             font-weight: 700;
             font-size: 1rem;
             text-align: center;
@@ -1316,7 +1286,7 @@
 
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/resultados-rapiudos-1-1024x1024-1.png" alt="Resultados rápidos">
+                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/resultados-rapidos-1024x1024-1.png" alt="Resultados rápidos">
                     </div>
                     <h3 class="benefit-title">Resultados Rápidos</h3>
                     <p class="benefit-description">Primeiros resultados já com 2 semanas de prática</p>
@@ -1329,9 +1299,8 @@
     <section class="benefits-list-section">
         <div class="benefits-list-container">
             <h2 class="section-title">Benefícios do Dotado Máximo</h2>
-            
             <p class="section-subtitle">
-                Com o método Dotado Máximo você obterá <span class="highlight-text">vários benefícios</span> em um único lugar!
+                Com o método <span class="highlight-text">Dotado Máximo</span> você obterá vários benefícios em um único lugar!
             </p>
 
             <div class="benefits-columns">
@@ -1364,10 +1333,9 @@
         <div class="access-container">
             <div class="access-content">
                 <h2 class="access-title">Acesse tudo pelo seu celular</h2>
-            </div>
-
-            <div class="access-image">
-                <img src="https://metodotripe.shop/wp-content/uploads/2026/01/dmartenova-min.png" alt="Acesse pelo celular">
+                <div class="access-image">
+                    <img src="https://metodotripe.shop/wp-content/uploads/2026/01/celular-metodo-tripe-1024x1024-1.png" alt="Acesse pelo celular">
+                </div>
             </div>
         </div>
     </section>
@@ -1375,99 +1343,87 @@
     <!-- Bonus Section -->
     <section class="bonus-section">
         <div class="bonus-container">
-            <h2 class="bonus-title">Você irá ganhar 6 bônus</h2>
-            <p class="bonus-subtitle">se comprar ainda HOJE</p>
+            <div class="bonus-header">
+                <h2 class="bonus-title">Você irá ganhar 6 bônus</h2>
+                <p class="bonus-subtitle">se comprar ainda HOJE</p>
+            </div>
 
             <div class="bonus-grid">
                 <div class="bonus-card">
                     <div class="bonus-image">
-                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/seja-malicioso-na-cama-pro-1.png" alt="Manual do Cafajeste Malicioso na Sedução">
+                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/Manual-do-Cafajeste-Malicioso-na-Seducao-1024x1024-1.png" alt="Manual do Cafajeste">
                     </div>
-                    <div class="bonus-info">
-                        <h3 class="bonus-name">Manual do Cafajeste Malicioso na Sedução</h3>
-                        <div class="bonus-pricing">
-                            <span class="bonus-price-old">de R$200,00</span>
-                            <span class="bonus-price-new">por R$00,00</span>
-                        </div>
-                    </div>
+                    <h3 class="bonus-name">Manual do Cafajeste Malicioso na Sedução</h3>
+                    <p class="bonus-price-old">de R$200,00</p>
+                    <p class="bonus-price-new">por R$00,00</p>
                 </div>
 
                 <div class="bonus-card">
                     <div class="bonus-image">
-                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/a-pscologia-reversa-capa-pro-1.png" alt="Psicologia Reversa na Persuasão p/ Mulheres">
+                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/Psicologia-Reversa-na-Persuasao-p-Mulheres-1024x1024-1.png" alt="Psicologia Reversa">
                     </div>
-                    <div class="bonus-info">
-                        <h3 class="bonus-name">Psicologia Reversa na Persuasão p/ Mulheres</h3>
-                        <div class="bonus-pricing">
-                            <span class="bonus-price-old">de R$199,00</span>
-                            <span class="bonus-price-new">por R$00,00</span>
-                        </div>
-                    </div>
+                    <h3 class="bonus-name">Psicologia Reversa na Persuasão p/ Mulheres</h3>
+                    <p class="bonus-price-old">de R$199,00</p>
+                    <p class="bonus-price-new">por R$00,00</p>
                 </div>
 
                 <div class="bonus-card">
                     <div class="bonus-image">
-                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/manual-do-homem-moderno-pro-1.png" alt="Manual do Homem Moderno">
+                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/Manual-do-Homem-Moderno-1024x1024-1.png" alt="Manual do Homem Moderno">
                     </div>
-                    <div class="bonus-info">
-                        <h3 class="bonus-name">Manual do Homem Moderno</h3>
-                        <div class="bonus-pricing">
-                            <span class="bonus-price-old">de R$50,00</span>
-                            <span class="bonus-price-new">por R$00,00</span>
-                        </div>
-                    </div>
+                    <h3 class="bonus-name">Manual do Homem Moderno</h3>
+                    <p class="bonus-price-old">de R$50,00</p>
+                    <p class="bonus-price-new">por R$00,00</p>
                 </div>
 
                 <div class="bonus-card">
                     <div class="bonus-image">
-                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/o-que-nao-fazer-no-primeiro-encontro.png" alt="O Que Não Fazer no Primeiro Encontro">
+                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/O-Que-Nao-Fazer-no-Primeiro-Encontro-1024x1024-1.png" alt="O Que Não Fazer">
                     </div>
-                    <div class="bonus-info">
-                        <h3 class="bonus-name">O Que Não Fazer no Primeiro Encontro</h3>
-                        <div class="bonus-pricing">
-                            <span class="bonus-price-old">de R$50,00</span>
-                            <span class="bonus-price-new">por R$00,00</span>
-                        </div>
-                    </div>
+                    <h3 class="bonus-name">O Que Não Fazer no Primeiro Encontro</h3>
+                    <p class="bonus-price-old">de R$50,00</p>
+                    <p class="bonus-price-new">por R$00,00</p>
                 </div>
 
                 <div class="bonus-card">
                     <div class="bonus-image">
-                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/como-saber-se-ela-sente-desejo-por-mim-min.png" alt="Como Saber Se Ela Sente Desejo Por Mim">
+                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/Como-Saber-Se-Ela-Sente-Desejo-Por-Mim-1024x1024-1.png" alt="Como Saber Se Ela Sente Desejo">
                     </div>
-                    <div class="bonus-info">
-                        <h3 class="bonus-name">Como Saber Se Ela Sente Desejo Por Mim</h3>
-                        <div class="bonus-pricing">
-                            <span class="bonus-price-old">de R$50,00</span>
-                            <span class="bonus-price-new">por R$00,00</span>
-                        </div>
-                    </div>
+                    <h3 class="bonus-name">Como Saber Se Ela Sente Desejo Por Mim</h3>
+                    <p class="bonus-price-old">de R$50,00</p>
+                    <p class="bonus-price-new">por R$00,00</p>
                 </div>
 
                 <div class="bonus-card">
                     <div class="bonus-image">
-                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/controle-maximo-mockup-min.png" alt="Controle Máximo - Ejaculação Precoce">
+                        <img src="https://metodotripe.shop/wp-content/uploads/2026/01/Controle-Maximo-Ejaculacao-Precoce-1024x1024-1.png" alt="Controle Máximo">
                     </div>
-                    <div class="bonus-info">
-                        <h3 class="bonus-name">Controle Máximo - Ejaculação Precoce</h3>
-                        <div class="bonus-pricing">
-                            <span class="bonus-price-old">de R$199,00</span>
-                            <span class="bonus-price-new">por R$00,00</span>
-                        </div>
-                    </div>
+                    <h3 class="bonus-name">Controle Máximo - Ejaculação Precoce</h3>
+                    <p class="bonus-price-old">de R$199,00</p>
+                    <p class="bonus-price-new">por R$00,00</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <h2 class="stats-title">
+            APENAS 36% DOS HOMENS<br>
+            CONSEGUEM FAZER AS MULHERES<br>
+            GOZAREM!
+        </h2>
+    </section>
+
     <!-- Pricing Section -->
     <section class="pricing-section" id="oferta">
         <div class="pricing-container">
-            <h2 class="pricing-main-title">APENAS 36% DOS HOMENS<br>CONSEGUEM FAZER AS MULHERES<br>GOZAREM!</h2>
-            <p class="pricing-subtitle">Sua compra é <span class="secure-text">100% segura</span> e discreta!</p>
+            <h2 class="pricing-main-title">Sua compra é 100% segura e discreta!</h2>
+            <p class="pricing-subtitle">
+                <span class="secure-text">✓</span> Ambiente seguro e criptografado
+            </p>
             <p class="pricing-description">
-                Enviaremos os acesso ao treinamento para o seu email e WhatsApp, imediatamente após a confirmação de pagamento. 
-                Poderão acessar pelo seu celular ou computador. Rápido, prático e fácil!
+                Enviaremos os acesso ao treinamento para o seu email e WhatsApp, imediatamente após a confirmação de pagamento. Poderão acessar pelo seu celular ou computador. Rápido, prático e fácil!
             </p>
 
             <div class="pricing-cards">
@@ -1682,3 +1638,67 @@
 
             <p class="modal-bonus">
                 VOCÊ VAI RECEBER TODOS OS BÔNUS DO PROGRAMA (AVALIADOS EM R$ 748) + ATUALIZAÇÕES E ACESSO VITALÍCIO, GARANTIDO!
+            </p>
+
+            <a href="https://pay.wiapy.com/LjTUsbxBo8" class="modal-cta">
+                QUERO O PLANO COMPLETO AGORA
+            </a>
+
+            <button class="modal-no" onclick="goToCheckout()">
+                Não, quero apenas o plano básico de R$ 9,90
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2026 Método Dotado Máximo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Funções do Modal de Upsell
+        function showUpsellModal() {
+            document.getElementById('upsellModal').classList.add('active');
+        }
+
+        function closeUpsellModal() {
+            document.getElementById('upsellModal').classList.remove('active');
+        }
+
+        function closeModalOnOutsideClick(event) {
+            const modal = document.getElementById('upsellModal');
+            if (event.target === modal) {
+                closeUpsellModal();
+            }
+        }
+
+        function goToCheckout() {
+            // Link para o checkout do plano básico de 9,90
+            window.location.href = "https://pay.wiapy.com/LjTUsbxBo8"; // Substitua pelo link correto de 9,90 se for diferente
+        }
+
+        // Função do FAQ
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Controle do Vídeo
+        const video = document.getElementById('heroVideo');
+        const soundInstruction = document.getElementById('soundInstruction');
+        const placeholder = document.getElementById('videoPlaceholder');
+
+        if (video) {
+            video.addEventListener('loadeddata', () => {
+                placeholder.style.display = 'none';
+            });
+
+            soundInstruction.addEventListener('click', () => {
+                video.muted = false;
+                soundInstruction.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
